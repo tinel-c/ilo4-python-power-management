@@ -31,3 +31,20 @@ pip install regex
 ```
 git clone https://github.com/tinel-c/ilo4-python-power-management.git
 ```
+
+#install it as a service 
+Copy ilo4ServerPowerManager.service to /lib/systemd/system/ilo4ServerPowerManager.service
+
+```
+sudo cp ilo4ServerPowerManager.service /lib/systemd/system/ilo4ServerPowerManager.service
+```
+
+Reload systemd
+
+```
+sudo systemctl daemon-reload
+sudo systemctl enable ilo4ServerPowerManager.service
+sudo systemctl start ilo4ServerPowerManager.service
+sudo systemctl status ilo4ServerPowerManager.service
+```
+

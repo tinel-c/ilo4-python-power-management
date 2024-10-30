@@ -1,0 +1,15 @@
+[Unit]
+Description=ilo4ServerPowerManager
+After=network.target network-online.target
+
+[Service]
+Type=simple
+User=tinel
+Group=tinel
+Restart=always
+WorkingDirectory=/home/tinel/.venv
+PIDFile=/var/run/ilo4ServerPowerManager/service.pid
+ExecStart=/home/tinel/.venv/bin/python3 /home/tinel/ilo4-python-power-management/powerManagement.py
+
+[Install]
+WantedBy=multi-user.target
